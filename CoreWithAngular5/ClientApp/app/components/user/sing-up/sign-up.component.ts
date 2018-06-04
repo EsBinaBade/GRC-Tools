@@ -36,8 +36,9 @@ export class SignupComponent implements OnInit {
     OnSubmit(form: NgForm) {
         this.userService.registerUser(form.value)
             .subscribe((data: any) => {
-                debugger;
-                this.router.navigate(['/success']);
+                alert("Registration Successful");
+                this.resetForm(form);
+                //this.router.navigate(['/success']);
                 //if (data.Succeeded == true) {
                 //    this.resetForm(form);
                 //    this.router.navigate(['/success']);

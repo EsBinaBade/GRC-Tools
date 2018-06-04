@@ -47,6 +47,49 @@ namespace CoreWithAngular5.Models
             }
         }
 
+        public int UpdateOrganization(Organization organization)
+        {
+            try
+            {
+                db.Entry(organization).State = EntityState.Modified;
+                db.SaveChanges();
+
+                return 1;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        //Get the details of a particular employee 
+        public Organization GetOrganizationById(int organizationId)
+        {
+            try
+            {
+                Organization organization = db.Organization.Find(organizationId);
+                return organization;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public int DeleteOrganization(int organizationId)
+        {
+            try
+            {
+                Organization org = db.Organization.Find(organizationId);
+                db.Organization.Remove(org);
+                db.SaveChanges();
+                return 1;
+            }
+            catch
+            {
+                throw;
+            }
+        }
         //To Add new employee record   
         public int Adduser(User user)
         {

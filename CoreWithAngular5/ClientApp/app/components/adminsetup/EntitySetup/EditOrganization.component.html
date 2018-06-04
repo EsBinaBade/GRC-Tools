@@ -1,19 +1,20 @@
-﻿
-
-<div class="col-sm-12">
+﻿<!--<div class="col-sm-12">
     <div class='col-sm-3'>
         <nav-menu></nav-menu>
     </div>
+
     <div class="col-sm-9">
         <div class="header" style="width:500px">
-            <h2 style="color:#33AD97">{{title}} Organization</h2>
-    </div>
-       
-        <form [formGroup]="organizationForm" (ngSubmit)="save()" #formDir="ngForm" novalidate>
+            <h2 style="color:#33AD97">Add Organization</h2>
+        </div>
+
+        <form *ngFor="let org of Organizations" [formGroup]="organizationForm" (ngSubmit)="save()" #formDir="ngForm" novalidate>
+            <input type="hidden" name="organizationId" value="{{org.organizationId}}" formControlName="organizationId" />
+
             <div class="form-group row">
                 <label class=" control-label col-md-12">Organization Name</label>
                 <div class="col-md-4">
-                    <input class="form-control" type="text" formControlName="organizationName">
+                    <input class="form-control" type="text" formControlName="organizationName" value="{{org.organizationName}}">
                     <div *ngIf="organizationName.errors && (organizationName.dirty || organizationName.touched)" class="alert-danger">
                         <div [hidden]="!organizationName.errors.required">
                             organizationName is required!
@@ -26,7 +27,7 @@
             <div class="form-group row">
                 <label class="control-label col-md-12" for="LegalName">Legal Name</label>
                 <div class="col-md-4">
-                    <input class="form-control" type="text" formControlName="legalName" minlength="4">
+                    <input class="form-control" type="text" formControlName="legalName" value="{{org.legalName}}" minlength="4">
                     <div *ngIf="legalName.errors && (legalName.dirty || legalName.touched)" class="alert-danger">
                         <div [hidden]="!legalName.errors.required">
                             legalName is required!
@@ -41,7 +42,7 @@
             <div class="form-group row">
                 <label class="control-label col-md-12" for="DateAndTime">DateAndTime</label>
                 <div class="col-md-4">
-                    <input class="form-control" type="text" formControlName="dateAndTime">
+                    <input class="form-control" type="text" formControlName="dateAndTime" value="{{org.dateAndTime}}">
                     <div *ngIf="dateAndTime.errors && (dateAndTime.dirty || dateAndTime.touched)" class="alert-danger">
                         <div [hidden]="!dateAndTime.errors.required">
                             dateAndTime is required!
@@ -56,4 +57,4 @@
         </form>
 
     </div>
-</div>
+</div>-->

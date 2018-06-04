@@ -20,6 +20,30 @@ export class OrganizationService {
             .catch(this.errorHandler)
     } 
 
+   
+    getOrganizations() {
+        return this._http.get(this.myAppUrl + 'api/GetOrganizations')
+            .map((response: Response) => response.json())
+            .catch(this.errorHandler);
+    } 
+    getOrganizationById(organizationId: number) {
+        return this._http.get(this.myAppUrl + "api/getOrgById/" + organizationId)
+            .map((response: Response) => response.json())
+            .catch(this.errorHandler)
+    } 
+
+    updateOrganization(organization) {
+        return this._http.put(this.myAppUrl + 'api/editOrganization', organization)
+            .map((response: Response) => response.json())
+            .catch(this.errorHandler);
+    } 
+
+    deleteOrganization(organizationId) {
+        return this._http.delete(this.myAppUrl + "api/deleteOrganization/" + organizationId)
+            .map((response: Response) => response.json())
+            .catch(this.errorHandler);
+    } 
+
     errorHandler(error: Response) {
         console.log(error);
         return Observable.throw(error);

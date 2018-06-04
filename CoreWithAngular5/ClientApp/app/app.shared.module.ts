@@ -17,7 +17,10 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AddOrganizationComponent } from './components/adminsetup/EntitySetup/AddOrganization.component';
 import { ProductKeyComponent } from './components/adminsetup/ProductKey.component';
 import { InviteAdminComponent } from './components/adminsetup/InviteAdmin/InviteAdmin.component';
-import { CheckProductKeyComponent} from './components/adminsetup/CheckProductKey/CheckProductKey.component';
+import { CheckProductKeyComponent } from './components/adminsetup/CheckProductKey/CheckProductKey.component';
+//import { EditOrganizationComponent } from './components/adminsetup/EntitySetup/EditOrganization.component';
+import { AuditComponent} from './components/adminsetup/Audit/audit.component';
+
 import { appRoutes } from './routes';
 
 @NgModule({
@@ -35,6 +38,8 @@ import { appRoutes } from './routes';
         ProductKeyComponent,
         InviteAdminComponent,
         CheckProductKeyComponent,
+        //EditOrganizationComponent,
+        AuditComponent,
         HomeComponent
         
     ],

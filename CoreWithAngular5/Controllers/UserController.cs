@@ -23,6 +23,8 @@ namespace CoreWithAngular5.Controllers
 
         }
 
+
+
         [HttpPost]
         [Route("api/Adduser")]
         public int Create([FromBody] User user)

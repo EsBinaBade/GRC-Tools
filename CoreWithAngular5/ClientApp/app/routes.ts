@@ -10,6 +10,9 @@ import { UserComponent } from './components/user/user.component';
 import { SignInComponent } from './components/user/sign-in/sign-in.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AddOrganizationComponent } from './components/adminsetup/EntitySetup/AddOrganization.component';
+//import { EditOrganizationComponent } from './components/adminsetup/EntitySetup/EditOrganization.component';
+import { AuditComponent } from './components/adminsetup/Audit/audit.component';
+
 import { CheckProductKeyComponent } from './components/adminsetup/CheckProductKey/CheckProductKey.component';
 
 import { ProductKeyComponent} from './components/adminsetup/ProductKey.component';
@@ -21,10 +24,14 @@ export const appRoutes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'dashboard', component: DashboardComponent },
     { path: 'addOrganization', component: AddOrganizationComponent },
+    { path: 'edit/Organization/:organizationId', component: AddOrganizationComponent },
     { path: 'productKey', component: ProductKeyComponent},
     { path: 'inviteAdmin', component: InviteAdminComponent },
     { path: 'checkProductKey', component: CheckProductKeyComponent },
+    //{ path: 'editOrganization', component: EditOrganizationComponent },
+    { path: 'audit', component: AuditComponent },
 
+    
     //{ path: 'sign-up', component: SignupComponent },
     { path: 'success', component: RegistrationSuccessComponent },
     { path: 'counter', component: CounterComponent },

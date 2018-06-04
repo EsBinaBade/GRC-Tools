@@ -27,5 +27,26 @@ namespace CoreWithAngular5.Controllers
         {
             return objuser.AddOrganization(organization);
         }
+
+        [HttpGet]
+        [Route("api/getOrgById/{organizationId}")]
+        public Organization Details(int organizationId)
+        {
+            return objuser.GetOrganizationById(organizationId);
+        }
+
+        [HttpPut]
+        [Route("api/editOrganization")]
+        public int Edit([FromBody] Organization organization)
+        {
+            return objuser.UpdateOrganization(organization);
+        }
+
+        [HttpDelete]
+        [Route("api/deleteOrganization/{organizationId}")]
+        public int Delete(int organizationId)
+        {
+            return objuser.DeleteOrganization(organizationId);
+        }
     }
 }
